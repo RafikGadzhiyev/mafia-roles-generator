@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafia role Generator</title>
+</head>
+
+<body>
+    <form class="generation-form">
+        <label class="total-players-label">
+            Total players: <input type="number" min="1" max="100" value="1" class="total-players-input ii">
+        </label>
+        <!-- Computed automatically every time when total players will change -->
+        <label class="total-mafias">
+            Total mafias: <input type="number" min="1" max="25" disabled value="0" class="total-mafias-input ii">
+        </label>
+        <div class="additional-roles-container">
+            <h2 class="additional-roles-title">Additional roles</h2>
+            <ul class="additional-roles-list">
+                <label class="additional-role">
+                    <input type="checkbox" class="additional-role-choose-button" value="immortal"> Immortal -
+                    Бессмертный
+                </label>
+                <label class="additional-role">
+                    <input type="checkbox" class="additional-role-choose-button" value="maniac"> Maniac - Маньяк
+                </label>
+            </ul>
+        </div>
+        <button class="start-generation-button">Start generation</button>
+    </form>
+    <div class="roles-container">
+    </div>
+
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>
