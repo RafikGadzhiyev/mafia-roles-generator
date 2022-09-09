@@ -49,7 +49,7 @@ let roles: NodeListOf<HTMLLIElement> | null | undefined;
 // creating functions
 const updateGameStateData = (data: IGameData, totalPlayers: number, additionalRolesData: NodeListOf<HTMLInputElement>): IGameData => {
     data.totalPlayers = totalPlayers;
-    data.totalMafias = ~~(totalPlayers / 3);
+    data.totalMafias = ~~((Math.abs(totalPlayers - 1)) / 3);
     additionalRolesData.forEach((role: HTMLInputElement) => {
         if (role.checked) {
             if (role.value === 'immortal' || role.value === 'maniac') {
@@ -122,7 +122,7 @@ const startGeneration = (e: MouseEvent, data: IGameData) => {
 
 const updateTotalMafias = (e: Event) => {
     if (totalMafiasInput && e.target) {
-        totalMafiasInput.value = ~~(+(e.target as HTMLInputElement).value / 3) + '';
+        totalMafiasInput.value = ~~(Math.abs((+(e.target as HTMLInputElement).value) - 1) / 3) + '';
     }
 }
 
