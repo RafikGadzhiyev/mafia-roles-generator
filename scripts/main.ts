@@ -122,7 +122,7 @@ const startGeneration = (e: MouseEvent, data: IGameData) => {
 
 const updateTotalMafias = (e: Event) => {
     if (totalMafiasInput && e.target) {
-        totalMafiasInput.value = ~~(Math.abs((+(e.target as HTMLInputElement).value) - 1) / 3) + '';
+        totalMafiasInput.value = ~~((Math.abs((+(e.target as HTMLInputElement).value) - 1)) / 3) + '';
     }
 }
 
